@@ -1,0 +1,5 @@
+# Get started
+  1. Check ur `.env`
+  2. Next, build Containers `docker-compose up --build`
+  3. Run App `docker compose -f docker-compose.yml up app`
+  4. If u need bash use `docker compose -f docker-compose.yml exec app bash`
