@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+require 'active_record'
+require 'active_support'
+
+ActiveSupport::IsolatedExecutionState.isolation_level = :fiber
 
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
