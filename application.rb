@@ -3,6 +3,7 @@
 require 'active_record'
 require 'dotenv'
 require 'sinatra'
+require 'sinatra/json'
 
 Dotenv.load
 
