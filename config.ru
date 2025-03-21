@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require './app/app'
+require_relative 'app/v1/client_handler'
 
-run Sinatra::Application
+map('/v1/client_handler') { run V1::ClientHandler }

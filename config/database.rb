@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'active_record'
 require 'active_support'
 
@@ -6,9 +7,9 @@ ActiveSupport::IsolatedExecutionState.isolation_level = :fiber
 
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
-  host: ENV['DATABASE_HOST'],
-  port: ENV['DATABASE_PORT'],
-  username: ENV['DATABASE_USER'],
-  password: ENV['DATABASE_PASS'],
-  database: ENV['DATABASE_NAME']
+  host: ENV.fetch('DATABASE_HOST', nil),
+  port: ENV.fetch('DATABASE_PORT', nil),
+  username: ENV.fetch('DATABASE_USER', nil),
+  password: ENV.fetch('DATABASE_PASS', nil),
+  database: ENV.fetch('DATABASE_NAME', nil)
 )
