@@ -11,6 +11,8 @@ services:
       REDIS_URL: ${REDIS_URL}
       DATABASE_USER: ${DATABASE_USER}
       DATABASE_PASS: ${DATABASE_PASS}
+      WEB_CONCURRENCY: 2  # forks
+      MAX_THREADS: 6      # threads
     command: bundle exec falcon serve --bind "http://0.0.0.0:3000"
 
   db:
