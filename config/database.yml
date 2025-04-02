@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV.fetch('DATABASE_NAME', 'my_database') %>
+  pool: 5
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASS'] %>
+  host: <%= ENV.fetch('DATABASE_HOST', 'db') %>
+  port: <%= ENV.fetch('DATABASE_PORT', 5432) %>
+
+production:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 20
+  timeout: 5000

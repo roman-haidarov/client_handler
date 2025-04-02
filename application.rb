@@ -6,5 +6,3 @@ require 'sinatra'
 require 'sinatra/json'
 
 Dotenv.load
-
-require './config/database'
